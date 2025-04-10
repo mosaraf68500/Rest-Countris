@@ -1,13 +1,20 @@
 
+import { Suspense } from 'react';
 import './App.css'
+import Countris from './components/Countris/Countris';
+
+
+const countrisPromis=fetch('https://restcountries.com/v3.1/all')
+.then(res =>res.json());
 
 function App() {
   
 
   return (
     <>
-    <h1>All countris in the world...</h1>
-      
+      <Suspense fallback={<h3>all countris data is loading...</h3>}>
+        <Countris countrisPromis={countrisPromis}></Countris>
+      </Suspense>
     </>
   )
 }
