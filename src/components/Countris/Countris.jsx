@@ -1,20 +1,20 @@
 import React, { use } from 'react';
 import Country from '../Country/Country';
 
-const Countris = ({countrisPromis}) => {
+const Countries = ({countrisePromises}) => {
 
-    const countris=use(countrisPromis);
-    // console.log(countris)
+    const countries=use(countrisePromises);
+   
     return (
         
         <div>
-        <h1>My traval Countris...</h1>
+        <h1>My travel Countries...</h1>
         {
-            countris.map(country =><Country country={country}></Country>)
+            countries.map(country =><Country key={country.cca3} country={country}></Country>)
         }
 
         </div>
     );
 };
 
-export default Countris;
+export default Countries;
