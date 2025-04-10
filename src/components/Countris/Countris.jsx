@@ -1,20 +1,22 @@
-import React, { use } from 'react';
-import Country from '../Country/Country';
+import React, { use } from "react";
+import Country from "../Country/Country";
+import "./Countries.css";
 
-const Countries = ({countrisePromises}) => {
+const Countries = ({ countrisPromis }) => {
+  const countries = use(countrisPromis);
+  console.log(countries);
 
-    const countries=use(countrisePromises);
-   
-    return (
-        
-        <div>
-        <h1>My travel Countries...</h1>
-        {
-            countries.map(country =><Country key={country.cca3} country={country}></Country>)
-        }
+  return (
+    <div >
+      <h1>My travel Countries...</h1>
 
-        </div>
-    );
+      <div className="countries">
+        {countries.map((country) => (
+          <Country country={country}></Country>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Countries;
