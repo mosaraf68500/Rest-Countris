@@ -10,12 +10,14 @@ const Countries = ({ countrisPromis }) => {
 
   const handleVisitedCountries=(country)=>{
     console.log('visited countries btn clicked', country);
+    const newVisitedCountries=[...visitedCountries, country];
+    setVisitedCountries(newVisitedCountries);
   }
 
   return (
     <div >
       <h1>My travel Countries...</h1>
-      <h3>My visited Countries: {visitedCountries}</h3>
+      <h3>My visited Countries: {visitedCountries.length}</h3>
 
       <div className="countries">
         {countries.map((country) => (
